@@ -8,6 +8,7 @@ import Blog from "./components/Blog"
 import Form from "./components/Form"
 import Search from "./components/Search"
 import List from "./components/List"
+import WelcomeDialog from "./components/WelcomeDialog"
 
 function App() {
   const [flag, setflag] = useState(true)
@@ -73,8 +74,9 @@ function App() {
       {/* <LoginControl /> */}
       {/* <Blog posts={posts} /> */}
       {/* <Form /> */}
-      <Search searchTerm={searchTerm} handleSearch={handleSearch} />
-      <List list={filterList} />
+      {/* <Search searchTerm={searchTerm} handleSearch={handleSearch} />
+      <List list={filterList} /> */}
+      <WelcomeDialog />
     </>
   )
 }
