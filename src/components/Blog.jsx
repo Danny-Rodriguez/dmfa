@@ -20,10 +20,4 @@ function Post(props) {
   )
 }
 
-{
-  /* <li>{post.id}</li>
-<li>{post.title}</li>
-<li>{post.content}</li> */
-}
-
 export default Blog
