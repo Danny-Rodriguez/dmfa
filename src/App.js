@@ -6,9 +6,16 @@ import { useState } from "react"
 import LoginControl from "./components/LoginControl"
 import Blog from "./components/Blog"
 import Form from "./components/Form"
+import Search from "./components/Search"
+import List from "./components/List"
 
 function App() {
   const [flag, setflag] = useState(true)
+  const [searchTerm, setSearchTerm] = useState()
+  const handleSearch = e => {
+    setSearchTerm(e.target.value)
+  }
+
   const userInfo = {
     firstname: "Danny",
     lastname: "Rodriguez"
@@ -29,8 +36,32 @@ function App() {
       id: 3,
       title: "Run App",
       content: "You can run React app with npm start"
+    },
+    {
+      id: 4,
+      title: "Run App",
+      content: "You can run React app with npm start"
+    },
+    {
+      id: 5,
+      title: "Build Components",
+      content: "You can run React app with npm start"
+    },
+    {
+      id: 6,
+      title: "Define States",
+      content: "You can run React app with npm start"
+    },
+    {
+      id: 7,
+      title: "Forms Handling",
+      content: "You can run React app with npm start"
     }
   ]
+
+  const filterList = posts.filter(item => {
+    return item.title.toLowerCase().includes(searchTerm)
+  })
 
   return (
     <>
@@ -41,7 +72,9 @@ function App() {
       <Welcome user="Jake" /> */}
       {/* <LoginControl /> */}
       {/* <Blog posts={posts} /> */}
-      <Form />
+      {/* <Form /> */}
+      <Search searchTerm={searchTerm} handleSearch={handleSearch} />
+      <List list={filterList} />
     </>
   )
 }
