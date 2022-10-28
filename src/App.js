@@ -4,6 +4,7 @@ import Welcome from "./components/Welcome"
 import Clock from "./components/Clock"
 import { useState } from "react"
 import LoginControl from "./components/LoginControl"
+import Blog from "./components/Blog"
 
 function App() {
   const [flag, setflag] = useState(true)
@@ -12,10 +13,23 @@ function App() {
     lastname: "Rodriguez"
   }
 
-  // const toggle = () => {
-  //   console.log("Toggle Clicked")
-  //   setflag(!flag)
-  // }
+  const posts = [
+    {
+      id: 1,
+      title: "Hello World",
+      content: "Welcome to learning React"
+    },
+    {
+      id: 2,
+      title: "Installation",
+      content: "Installing React"
+    },
+    {
+      id: 3,
+      title: "Run App",
+      content: "You can run React app with npm start"
+    }
+  ]
 
   return (
     <>
@@ -24,7 +38,8 @@ function App() {
       {/* <Welcome user="Danny" />
       <Welcome user="Luke" />
       <Welcome user="Jake" /> */}
-      <LoginControl />
+      {/* <LoginControl /> */}
+      <Blog posts={posts} />
     </>
   )
 }
